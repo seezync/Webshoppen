@@ -1,0 +1,98 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produkt Detalier</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Product Details</h1>
+        <div class="cart" onclick="toggleCart()">
+            <span id="cart-count">0</span>
+            <img src="download.webp" alt="Shopping Cart">
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Produkter</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>L96 Sniper</h2>
+        <img src="l96.webp" alt="Product">
+        <p>En sniper perfekt för de som gillar o gömma sig med camo och skjuta från långa distanser.</p>
+        <p>Pris: $1240</p>
+        <button onclick="addToCart('Product 5', 1240)">Lägg till</button>
+    </div>
+    <footer>
+        <p>&copy; Airstoft.se</p>
+    </footer>
+
+    <div id="cart" class="cart-panel">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total Cost: <span id="total-cost">$0.00</span></p>
+        <button onclick="toggleCart()">Close</button>
+    </div>
+
+    <script>
+        let cartItems = [];
+        let cartCount = 0;
+
+        function addToCart(productName, price) {
+            cartItems.push({ name: productName, price: price });
+            cartCount++;
+            updateCart();
+        }
+
+        function removeFromCart(index) {
+            cartItems.splice(index, 1);
+            cartCount--;
+            updateCart();
+        }
+
+        function updateCart() {
+            updateCartCount();
+            updateTotalCost();
+            updateCartPanel();
+        }
+
+        function updateCartCount() {
+            document.getElementById('cart-count').innerText = cartCount;
+        }
+
+        function updateTotalCost() {
+            let totalCost = cartItems.reduce((sum, item) => sum + item.price, 0);
+            document.getElementById('total-cost').innerText = '$' + totalCost.toFixed(2);
+        }
+
+        function toggleCart() {
+            let cartPanel = document.getElementById('cart');
+            if (cartPanel.style.display === 'block') {
+                cartPanel.style.display = 'none';
+            } else {
+                cartPanel.style.display = 'block';
+                updateCartPanel();
+            }
+        }
+
+        function updateCartPanel() {
+            let cartItemsList = document.getElementById('cart-items');
+            cartItemsList.innerHTML = '';
+            cartItems.forEach((item, index) => {
+                let li = document.createElement('li');
+                li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                let removeButton = document.createElement('button');
+                removeButton.textContent = 'Remove';
+                removeButton.onclick = function() {
+                    removeFromCart(index);
+                };
+                li.appendChild(removeButton);
+                cartItemsList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

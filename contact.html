@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakta Oss</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #333;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+      }
+      .container h2 {
+        font-size: 24px;
+        margin-top: 0;
+      }
+      .container p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #666;
+      }
+      .container form {
+        margin-top: 20px;
+      }
+      .container form label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .container form input[type="text"],
+      .container form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      .container form textarea {
+        height: 150px;
+      }
+      .container form input[type="submit"] {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .container form input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+        margin-top: 250px;
+        margin-bottom: auto;
+      }
+
+      @media screen and (max-width: 768px) {
+        .container {
+          width: 90%;
+        }
+        .product {
+          width: 50%;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .container {
+          width: 100%;
+        }
+        .product {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Kontakta Oss!</h1>
+      <div class="cart" onclick="toggleCart()">
+          <span id="cart-count">0</span>
+          <img src="download.webp" alt="Varukorg">
+      </div>
+  </header>
+  <nav>
+      <ul>
+          <li><a href="index.html">Produkter</a></li>
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+  </nav>
+    <div class="container">
+      <h2>Skicka frågor eller inte för vi kommer inte bry oss!</h2>
+      <p>
+        Här kan du skicka in frågor eller feedback om våra produkter, vi kommer kanske kolla igenom vårann mejl men det är säkert att vi kommer svara på erat skit.
+      </p>
+      <form>
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Your Email</label>
+        <input type="text" id="email" name="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <input type="submit" value="Send Message" />
+      </form>
+    </div>
+    <footer>
+      <p>&copy; Airsoft.se</p>
+    </footer>
+  </body>
+</html>

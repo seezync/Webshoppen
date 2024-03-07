@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min Webshop </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+</head>
+<body>
+    <header>
+        <h1>Airsoft För Män</h1>
+        <div class="cart" onclick="toggleCart()">
+            <span id="cart-count">0</span>
+            <img src="download.webp" alt="Varukorg">
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Produkter</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Välkommen till Airsoft.se</h2>
+        <p>Här har vi över prisade airsoft vapen som är perfekt för dig som är så dum att spendera pengar på de här plast vapnerna!</p>
+    </div>
+    </nav>
+    <div class="container">
+        <div class="product">
+            <a href="product1.html" data-index="2">
+            <img src="pistol1.webp" alt="Produkt 1">
+            <h3>Produkt 1</h3>
+            <p>$150</p>
+           
+        </a>
+        </div>
+        <div class="product">
+            <a href="product2.html" data-index="2">
+            <img src="pistol2.webp" alt="Produkt 2">
+            <h3>Produkt 2</h3>
+            <p>$300</p>
+            </a>
+        </div>
+        <div class="product">
+            <a href="product3.html" data-index="3">
+            <img src="la-krisscrb_01.webp" alt="Produkt 3">
+            <h3>Produkt 3</h3>
+            <p>$200</p>
+            </a>
+        </div>
+        <div class="product">
+            <a href="product4.html" data-index="4">
+            <img src="m4a1.webp" alt="Produkt 4">
+            <h3>Produkt 4</h3>
+            <p>$500</p>
+            </a>
+        </div>
+        <div class="product">
+            <a href="product5.html" data-index="5">
+            <img src="l96.webp" alt="Produkt 5">
+            <h3>Produkt 5</h3>
+            <p>$1240</p>
+            </a>
+        </div>
+        <div class="product">
+            <a href="product6.html" data-index="6">
+            <img src="scar_L.webp" alt="Produkt 6">
+            <h3>Produkt 6</h3>
+            <p>$800</p>
+            </a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; Airsoft.se </p>
+    </footer>
+    <div id="cart" class="cart-panel">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Totalt: <span id="total-cost">$0.00</span></p>
+        <button onclick="toggleCart()">STÄNG</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
